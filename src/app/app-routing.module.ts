@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {SigninComponent} from "./features/signin/signin.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
-import {SignupComponent} from "./features/signup/signup.component";
+import {SignupComponent} from "./_features/signup/signup.component";
+import {LoginComponent} from "./_features/login/login.component";
+import {PasswordComponent} from "./_features/password/password.component";
+import {DashboardComponent} from "./_features/dashboard/dashboard.component";
 
 const routes: Routes = [
   //Default root : launch page
-  { path: '', redirectTo: '/signin', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   //Others root
-  {path : 'signin',component:SigninComponent},
+  {path : 'login',component:LoginComponent},
   {path : 'signup',component:SignupComponent},
+  {path : 'password',component:PasswordComponent},
+  {path : 'dashboard',component:DashboardComponent},
   //Root for page not found
-  {path : '**',redirectTo:'/signin'}
+  {path : '**',redirectTo:'/login'}
 ];
 
 @NgModule({

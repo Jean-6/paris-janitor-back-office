@@ -7,9 +7,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, RouterOutlet} from "@angular/router";
 import {CommonModule} from "@angular/common";
-import { PasswordComponent } from './features/password/password.component';
-import { LoginComponent } from './features/login/login.component';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { PasswordComponent } from './_features/password/password.component';
+import { LoginComponent } from './_features/login/login.component';
+import { DashboardComponent } from './_features/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
