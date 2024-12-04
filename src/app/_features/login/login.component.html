@@ -1,0 +1,37 @@
+
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+  <div class="card">
+    <div class="card-header h4 text-center">
+      Connexion
+    </div>
+
+    <div class="card-body">
+    <form [formGroup]="loginForm">
+      <div class=" form-group col-sm mb-2">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="text" placeholder="email"  formControlName="email" class="form-control form-control-sm"/>
+        <div class="form-error-message" *ngIf="this.loginForm.get('email')?.touched && (this.loginForm.get('email')?.errors || this.loginForm.get('email')?.invalid )">
+          <span>Entrer un email valide</span>
+        </div>
+      </div>
+
+      <div class="form-group col-sm mb-4">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input id="password" type="password" placeholder="Password" formControlName="password" class="form-control form-control-sm"/>
+        <div class="form-error-message" *ngIf="this.loginForm.get('password')?.touched && (this.loginForm.get('password')?.errors || this.loginForm.get('password')?.invalid )">
+          <span>Entrer le mot de passe</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div><button type="submit" (click)="onSubmit()" class="btn btn-primary mb-3 btn-sm" [disabled]="!loginForm.valid">Se connecter</button></div>
+      </div>
+      <div class="d-flex ">
+        <div class=""><a class="link text-decoration-none" href="/password">Mot de passe oublié</a></div>
+        <div class="mx-3"><a class="link text-decoration-none" href="/signup">Ouvrir un compte</a></div>
+        <div class="mx-3"><a class="link text-decoration-none" href="/dashboard">Tableau de bord</a></div>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
