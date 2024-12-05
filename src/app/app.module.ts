@@ -10,6 +10,8 @@ import {CommonModule} from "@angular/common";
 import { PasswordComponent } from './_features/password/password.component';
 import { LoginComponent } from './_features/login/login.component';
 import { DashboardComponent } from './_features/dashboard/dashboard.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 
 @NgModule({
   declarations: [
@@ -20,8 +22,8 @@ import { DashboardComponent } from './_features/dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
