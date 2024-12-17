@@ -6,6 +6,8 @@ import {SignupComponent} from "./_features/signup/signup.component";
 import {LoginComponent} from "./_features/login/login.component";
 import {PasswordComponent} from "./_features/password/password.component";
 import {DashboardComponent} from "./_features/dashboard/dashboard.component";
+import {PropertyListComponent} from "./_features/property-list/property-list.component";
+import {PropertyAddComponent} from "./_features/property-add/property-add.component";
 
 const routes: Routes = [
   //Default root : launch page
@@ -15,6 +17,8 @@ const routes: Routes = [
   {path : 'signup',component:SignupComponent},
   {path : 'password',component:PasswordComponent},
   {path : 'dashboard',component:DashboardComponent},
+  {path : 'property-list',component:PropertyListComponent},
+  {path : 'property-add',component:PropertyAddComponent},
   //Root for page not found
   {path : '**',redirectTo:'/login'}
 ];
