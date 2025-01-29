@@ -1,0 +1,142 @@
+
+
+<div class="wrapper">
+  <!--aside menu-->
+  <app-aside-menu></app-aside-menu>
+  <!---->
+
+  <!-- Page Content -->
+  <div class="" id="content">
+
+    <div class="row mb-1">
+      <div class="">
+        <div class="card rounded-0">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">Réservations</h5>
+              <button type="button" class="btn btn-sm btn-link">Deconnexion</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-1">
+      <div class="">
+        <div class="card rounded-0">
+          <div class="card-body">
+
+            <!-- Search Form-->
+
+            <div class="row">
+              <form class="d-flex justify-content-center">
+                <div class="form-group col-md-2">
+                  <select  id="month" class="form-select form-select-sm fs-6" >
+                    <option selected value="" >Choisir le mois</option>
+                    <option value="">Janvier</option>
+                    <option value="">Février</option>
+                    <option value="">Mars</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-2 mx-5">
+                  <select  id="year" class="form-select form-select-sm fs-6" >
+                    <option selected value="" >Choisir l'année</option>
+                    <option value="Apart">Janvier</option>
+                    <option value="Home">Février</option>
+                    <option value="Studio">Mars</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-2">
+                  <button type="submit" class="btn btn-primary btn-sm" (click)="onSubmit()" >Rechercher</button>
+                </div>
+              </form>
+            </div>
+            <!-- Schedule -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="table-container">
+          <section class="month">
+            <table class="month-table">
+              <thead>
+              <tr>
+                <th>Lun</th>
+                <th>Mar</th>
+                <th>Mer</th>
+                <th>Jeu</th>
+                <th>Ven</th>
+                <th>Sam</th>
+                <th>Dim</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="empty"></td> <!-- Cellule vide pour aligner le début du mois -->
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+              </tr>
+              <tr>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td class="empty"></td> <!-- Cellules vides pour compléter la semaine -->
+                <td class="empty"></td>
+                <td class="empty"></td>
+              </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+    </div>
+
+
+    <div class="d-flex justify-content-around mt-4">
+      <div>
+        <button type="submit" class="btn btn-primary btn-sm" (click)="getToPreviousMonth()">Précédent</button>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary btn-sm" (click)="getToNextMonth()">Suivant</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
