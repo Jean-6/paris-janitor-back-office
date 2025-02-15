@@ -5,10 +5,11 @@ import {catchError, Observable, throwError} from "rxjs";
 export function errorInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn): Observable<HttpEvent<unknown>> {
 
   return next(req).pipe(
-    catchError((error: HttpErrorResponse) => {
-      console.error('Erreur lors de la requête', error)
+    catchError((error: HttpErrorResponse)=>{
+      console.error('Erreur de la requete : ',error);
       return throwError(() => error);
     })
-  );
+  )
 
 }
+

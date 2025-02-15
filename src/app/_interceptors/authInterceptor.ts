@@ -6,7 +6,6 @@ import {inject} from "@angular/core";
 
 export function authInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn): Observable<HttpEvent<unknown>> {
   const authService = inject(AuthService);
-
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
       if(error.status === 401) {

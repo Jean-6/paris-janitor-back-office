@@ -4,7 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule, provideHttpClient, withInterceptors} from "@angular/common/http";
 import {RouterModule, RouterOutlet} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import { PasswordComponent } from './_features/password/password.component';
@@ -17,6 +17,8 @@ import {AsideMenuComponent} from "./_features/shared/aside-menu/aside-menu.compo
 import { PropertyAddComponent } from './_features/property-add/property-add.component';
 import {InputNumberModule} from "primeng/inputnumber";
 import {InputSwitchModule} from "primeng/inputswitch";
+import {errorInterceptor} from "./_interceptors/errorInterceptor";
+import {authInterceptor} from "./_interceptors/authInterceptor";
 
 
 @NgModule({
@@ -44,7 +46,11 @@ import {InputSwitchModule} from "primeng/inputswitch";
         InputSwitchModule,
     ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(
+      withInterceptors([authInterceptor,errorInterceptor])
+    )
+
   ],
   exports: [
   ],
